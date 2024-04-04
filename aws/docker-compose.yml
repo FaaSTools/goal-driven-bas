@@ -1,0 +1,448 @@
+version: '3'
+services:
+  primary_rules_create:
+    build:
+      context: ./rule/primary/create
+      dockerfile: Dockerfile
+    ports:
+      - "9000:8080"
+  primary_rules_get_id:
+    build:
+      context: ./rule/primary/get/id
+      dockerfile: Dockerfile
+    ports:
+      - "9001:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  primary_rules_update:
+    build:
+      context: ./rule/primary/update
+      dockerfile: Dockerfile
+    ports:
+      - "9002:8080"
+  primary_rules_delete:
+    build:
+      context: ./rule/primary/delete
+      dockerfile: Dockerfile
+    ports:
+      - "9003:8080"
+  primary_rules_initialise:
+    build:
+      context: ./rule/primary/initialise
+      dockerfile: Dockerfile
+    ports:
+      - "9004:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  additional_rules_create_save_db:
+    build:
+      context: ./rule/additional/create/save_db
+      dockerfile: Dockerfile
+    ports:
+      - "9005:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  additional_rules_create:
+    build:
+      context: ./rule/additional/create
+      dockerfile: Dockerfile
+    ports:
+      - "9051:8080"
+  additional_rules_get_id:
+    build:
+      context: ./rule/additional/get/id
+      dockerfile: Dockerfile
+    ports:
+      - "9006:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  additional_rules_update:
+    build:
+      context: ./rule/additional/update
+      dockerfile: Dockerfile
+    ports:
+      - "9007:8080"
+  additional_rules_delete_delete_from_db:
+    build:
+      context: ./rule/additional/delete/delete_db
+      dockerfile: Dockerfile
+    ports:
+      - "9008:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  additional_rules_delete:
+    build:
+      context: ./rule/additional/delete
+      dockerfile: Dockerfile
+    ports:
+      - "9052:8080"
+  additional_rules_initialise:
+    build:
+      context: ./rule/additional/initialise
+      dockerfile: Dockerfile
+    ports:
+      - "9009:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  additional_rules_get_all:
+    build:
+      context: ./rule/additional/get/all
+      dockerfile: Dockerfile
+    ports:
+      - "9010:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  plugin_create:
+    build:
+      context: ./plugin/create
+      dockerfile: Dockerfile
+    ports:
+      - "9011:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  plugin_get_id:
+    build:
+      context: ./plugin/get/id
+      dockerfile: Dockerfile
+    ports:
+      - "9012:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  plugin_update:
+    build:
+      context: ./plugin/update
+      dockerfile: Dockerfile
+    ports:
+      - "9013:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  plugin_delete:
+    build:
+      context: ./plugin/delete
+      dockerfile: Dockerfile
+    ports:
+      - "9014:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  plugin_initialise:
+    build:
+      context: ./plugin/initialise
+      dockerfile: Dockerfile
+    ports:
+      - "9015:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  plugin_get_all:
+    build:
+      context: ./plugin/get/all
+      dockerfile: Dockerfile
+    ports:
+      - "9016:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  plugin_assignment_get:
+    build:
+      context: ./plugin/assignment/iot_device/get
+      dockerfile: Dockerfile
+    ports:
+      - "9017:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  plugin_assignment_create:
+    build:
+      context: ./plugin/assignment/iot_device/create
+      dockerfile: Dockerfile
+    ports:
+      - "9018:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  plugin_assignment_delete:
+    build:
+      context: ./plugin/assignment/iot_device/delete
+      dockerfile: Dockerfile
+    ports:
+      - "9019:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  plugin_assignment_initialise:
+    build:
+      context: ./plugin/assignment/iot_device/initialise
+      dockerfile: Dockerfile
+    ports:
+      - "9020:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  logger_create:
+    build:
+      context: ./logger/create
+      dockerfile: Dockerfile
+    ports:
+      - "9022:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  logger_get_latest:
+    build:
+      context: ./logger/get/latest
+      dockerfile: Dockerfile
+    ports:
+      - "9023:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  logger_get_all:
+    build:
+      context: ./logger/get/all
+      dockerfile: Dockerfile
+    ports:
+      - "9024:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  logger_initialise:
+    build:
+      context: ./logger/initialise
+      dockerfile: Dockerfile
+    ports:
+      - "9025:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  measurements_create:
+    build:
+      context: ./measurements/create
+      dockerfile: Dockerfile
+    ports:
+      - "9026:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  measurements_get_all:
+    build:
+      context: ./measurements/get/all
+      dockerfile: Dockerfile
+    ports:
+      - "9027:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  measurements_initialise:
+    build:
+      context: ./measurements/initialise
+      dockerfile: Dockerfile
+    ports:
+      - "9028:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  scheduler:
+    build:
+      context: ./scheduler
+      dockerfile: Dockerfile
+    ports:
+      - "9029:8080"
+  rule_assignment_create:
+    build:
+      context: ./rule/assignment/create
+      dockerfile: Dockerfile
+    ports:
+      - "9030:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  rule_assignment_get_additional_rule_id:
+    build:
+      context: ./rule/assignment/get/additionalRuleId
+      dockerfile: Dockerfile
+    ports:
+      - "9031:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  rule_assignment_delete_primary_rule_id:
+    build:
+      context: ./rule/assignment/delete/primaryRuleId
+      dockerfile: Dockerfile
+    ports:
+      - "9032:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  rule_assignment_initialise:
+    build:
+      context: ./rule/assignment/initialise
+      dockerfile: Dockerfile
+    ports:
+      - "9033:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  rule_assignment_get_primary_rule_id:
+      build:
+        context: ./rule/assignment/get/primaryRuleId
+        dockerfile: Dockerfile
+      ports:
+        - "9034:8080"
+      environment:
+        DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  rule_assignment_delete_additional_rule_id:
+    build:
+      context: ./rule/assignment/delete/additionalRuleId
+      dockerfile: Dockerfile
+    ports:
+      - "9035:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  primary_rules_get_all:
+    build:
+      context: ./rule/primary/get/all
+      dockerfile: Dockerfile
+    ports:
+      - "9036:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  measurements_get_latest_by_plugin_id:
+    build:
+      context: ./measurements/get/latestByPluginId
+      dockerfile: Dockerfile
+    ports:
+      - "9037:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  plugin_assignment_rule_create:
+    build:
+      context: ./plugin/assignment/rule/create
+      dockerfile: Dockerfile
+    ports:
+      - "9038:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  plugin_assignment_rule_get_plugin_id:
+    build:
+      context: ./plugin/assignment/rule/get/pluginId
+      dockerfile: Dockerfile
+    ports:
+      - "9039:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  plugin_assignment_rule_delete_rule_id:
+    build:
+      context: ./plugin/assignment/rule/delete/primaryRuleId
+      dockerfile: Dockerfile
+    ports:
+      - "9040:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  plugin_assignment_rule_initialise:
+    build:
+      context: ./plugin/assignment/rule/initialise
+      dockerfile: Dockerfile
+    ports:
+      - "9041:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  plugin_assignment_rule_get_rule_id:
+    build:
+      context: ./plugin/assignment/rule/get/primaryRuleId
+      dockerfile: Dockerfile
+    ports:
+      - "9042:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  plugin_assignment_rule_delete_plugin_id:
+    build:
+      context: ./plugin/assignment/rule/delete/pluginId
+      dockerfile: Dockerfile
+    ports:
+      - "9043:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  measurements_limits_initialise:
+    build:
+      context: ./measurements/limits/initialise
+      dockerfile: Dockerfile
+    ports:
+      - "9044:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  measurements_limits_create:
+    build:
+      context: ./measurements/limits/create
+      dockerfile: Dockerfile
+    ports:
+      - "9045:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  measurements_limits_get_all:
+    build:
+      context: ./measurements/limits/get/all
+      dockerfile: Dockerfile
+    ports:
+      - "9046:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  measurements_limits_get_plugin_id:
+    build:
+      context: ./measurements/limits/get/pluginId
+      dockerfile: Dockerfile
+    ports:
+      - "9047:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  measurements_validation_logs_create:
+    build:
+      context: ./measurements/validation_logs/create
+      dockerfile: Dockerfile
+    ports:
+      - "9048:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  measurements_validation_logs_get_all:
+    build:
+      context: ./measurements/validation_logs/get/all
+      dockerfile: Dockerfile
+    ports:
+      - "9049:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  measurements_validation_logs_initialise:
+    build:
+      context: ./measurements/validation_logs/initialise
+      dockerfile: Dockerfile
+    ports:
+      - "9050:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  commissioner:
+    build:
+      context: ./commissioner
+      dockerfile: Dockerfile
+    ports:
+      - "9053:8080"
+  plugin_deployer:
+    build:
+      context: ./plugin_deployer
+      dockerfile: Dockerfile
+    ports:
+      - "9054:8080"
+  additional_rules_update_update_db:
+    build:
+      context: ./rule/additional/update/update_db
+      dockerfile: Dockerfile
+    ports:
+      - "9055:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  primary_rules_create_save_db:
+    build:
+      context: ./rule/primary/create/save_db
+      dockerfile: Dockerfile
+    ports:
+      - "9056:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  primary_rules_update_update_db:
+    build:
+      context: ./rule/primary/update/update_db
+      dockerfile: Dockerfile
+    ports:
+      - "9057:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
+  primary_rules_delete_delete_db:
+    build:
+      context: ./rule/primary/delete/delete_db
+      dockerfile: Dockerfile
+    ports:
+      - "9058:8080"
+    environment:
+      DB_CONNECTION_STRING: "DB_CONNECTION_STRING" # Replace with your own connection string
