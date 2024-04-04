@@ -21,11 +21,6 @@ Refer to the official documentation of these technologies for more information.
 2. Clone the repository.
 3. Run `./gradlew build` to build the project.
 
-### Executing the Program
-
-1. Start the IoT device server with `./gradlew :iot-device:run`.
-2. Start the plugin server with `./gradlew :plugin:run`.
-
 ### Building and Deploying Docker Images
 
 1. Create Docker images using `jibDockerBuild` (task in Gradle) within both the iot-device and plugin modules.
